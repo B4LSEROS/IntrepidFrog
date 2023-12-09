@@ -1,0 +1,6 @@
+.main {
+    height: 100%;
+    width: 50%;
+
+    background: radial-gradient(circle at 3% 4.8%, rgb(169, 224, 127) 0%, rgb(248, 247, 121) 86.6%);
+}

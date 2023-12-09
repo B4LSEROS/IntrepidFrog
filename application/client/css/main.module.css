@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    height: 100dvh;
+    width: 100dvw;
+
+    margin: -8px;
+    padding: 0px;
+
+
+}
+
+
+
+.loginContainer {
+    height: 100%;
+    width: 50%;
+
+    background-color: black;
+
+}
