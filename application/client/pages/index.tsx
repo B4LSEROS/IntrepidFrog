@@ -19,7 +19,7 @@ export default function Main () {
                 <form className={css.loginContainer}>
                     
                         <Image className={css.logo}alt='IntrepidFrog Logo'src={logo}></Image>
-                        <h1>Login</h1>
+                        <h1 className={css.title}>Login</h1>
 
                 </form>
             </section>
