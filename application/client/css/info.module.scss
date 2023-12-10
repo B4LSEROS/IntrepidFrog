@@ -1,9 +1,11 @@
 @keyframes Opacity {
     from {
         opacity: 0.5;
+        border: none;
     }
     to {
         opacity: 1;
+        box-shadow: 2px 2px 10px #008CFF;
     }
 }
 

@@ -16,7 +16,9 @@ export default function InfoContainer(lemma) {
 
     return (
         <div className={css.main}>
+
             We believe in a user-centric approach for problem solving. ❤️
+            <p>Designed utilizing user-frist approach</p>
         </div>
     )
 }

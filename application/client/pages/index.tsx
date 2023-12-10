@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Head from "next/head";
 import Image from 'next/image';
 import Banner from "../components/Banner";
@@ -9,7 +9,6 @@ import InfoContainer from "../components/InfoContainer";
 export default function Main () {
 
     const [content, setContent] = useState('');
-
 
     return (
         <div className={css.main}>
@@ -24,12 +23,14 @@ export default function Main () {
 
 
             <section className={css.section2}>
+
            {content !== 'title' ?  
                 <form className={css.loginContainer}>
                         <Image className={css.logo}alt='IntrepidFrog Logo'src={logo}></Image>
                         <h1 className={css.title}>Login</h1>
                 </form>
              : <InfoContainer />}
+
             </section>
 
         </div>
