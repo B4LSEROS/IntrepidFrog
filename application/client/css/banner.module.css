@@ -9,12 +9,12 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .main {
-        font-size: 16px;
+        font-size: 6dvh;
     }
     .phrase {
-        font-size: 12px;
+        font-size: 3dvh;
     }
 
 }
@@ -56,27 +56,45 @@
 
 
     box-sizing: border-box;
-    font-size: 1rem;
     font-family: 'MonaSans-Light';
 }
 .phrase > h2:nth-child(odd) {
     text-align: right;
     
     color: white;
-    animation: Fade 4s ease forwards;
+    animation: Fade 3s ease forwards;
     cursor: pointer;
+}
+
+.phrase > h2:nth-child(odd):hover {
+    text-shadow: 1px 1px 9px white;
 }
 
 .phrase > h2:nth-child(even) {
     text-align: left;
     cursor: pointer;
 
-    animation: Fade 6s ease forwards;
+    animation: Fade 5s ease forwards;
 
 }
 
 .phrase > h2:nth-child(even):hover {
     text-shadow: 1px 1px 9px white;
+}
+
+.link {
+    height: 10%;
+    width: 10%;
+}
+
+.github {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    bottom: 0px;
+
+    cursor: pointer;
 }
 
 
