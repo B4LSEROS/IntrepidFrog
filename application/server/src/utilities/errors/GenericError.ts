@@ -4,9 +4,9 @@ class GenericError extends Error {
     super(alert);
   }
 
+  // Access property to obtain the statuscode in another instances of GenericError
   get codeStatus() {
     return this.statusCode;
-
   }
 }
 

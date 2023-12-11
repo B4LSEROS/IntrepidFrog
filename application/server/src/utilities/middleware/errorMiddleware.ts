@@ -7,8 +7,6 @@ import { JsonWebTokenError } from 'jsonwebtoken';
 // Request and Response HTTP objets, along with NextFunction for passing middleware function along.
 import {NextFunction, Request, Response} from 'express';
 
-
-
 function middleWareError (
   err: JsonWebTokenError | GenericError | Error,
   req: Request,

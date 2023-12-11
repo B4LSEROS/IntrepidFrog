@@ -1,11 +1,12 @@
 @keyframes Fade {
     from {
-        opacity: 0%;
+        opacity: 0;
+        transform: translateY(10px);
 
     }
     to {
-        opacity: 90%;
-        transform: translateY(-10px);
+        opacity: 0.9;
+        transform: translateY(0);
     }
 }
 
@@ -19,16 +20,13 @@
 
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 200px) {
     .main {
-        font-size: 14px;
+        font-size: 3dvh;
     }
-
-    .phrase {
-        flex-wrap: wrap;
-        font-size: 0.5dvh;
-    }
+    
 }
+
 
 .main {
     display: flex;
