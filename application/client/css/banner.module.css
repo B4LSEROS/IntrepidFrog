@@ -34,8 +34,9 @@
     height: 100%;
     width: 40%;
 
-    background-color: 
-    #008CFF;
+    background: rgb(2,0,36);
+    background: linear-gradient(110deg, rgba(2,0,36,1) 0%, rgb(54, 140, 211) 0%, rgba(0,126,255,1) 100%);
+    
     box-shadow: 2px 4px 9px #008CFF;
     color: white;
 

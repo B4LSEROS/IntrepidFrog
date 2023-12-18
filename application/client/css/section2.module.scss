@@ -1,24 +1,17 @@
-@keyframes FadeIn {
-    from {
-        opacity: 0;
-        background-color: white;
-    }
-
-    to {
-        opacity: 1;
-        background-color: whitesmoke;
-    }
-}
-
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
-    height: 100dvh;
-    width: 100dvw;
+    height: 100%;
+    width: 60%;
 
-    margin: -8px;
+    background-color: black;
+    background-image: url('../public/background-black.jpg');
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .loginContainer {

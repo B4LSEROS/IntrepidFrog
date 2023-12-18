@@ -7,19 +7,15 @@ import gitHubLogo from '../public/github.svg';
 import css from '../css/banner.module.css';
 
 export default function Banner ({getContent}) {
-
-    function handleClick() {
-        getContent('title');
-    }
     
     return (
         <section className={css.main}>
-            <Image alt='IntrepidFrog Logo'src={intrepidFrogLogo} className={css.intrepidFrogLogo}onClick={handleClick}></Image>
+            <Image alt='IntrepidFrog Logo'src={intrepidFrogLogo} className={css.intrepidFrogLogo}></Image>
 
             <div className={css.phrase}>
-                <h2 onClick={() => getContent('transaction')}>Transaction History</h2>
-                <h2 onClick={() => getContent('authentication')}>User Authentication</h2>
-                <h2 onClick={() => getContent('Transfers')}>Secure Transfers</h2>
+                <h2 onClick={() => getContent('transactionHistory')}>Transaction History</h2>
+                <h2 onClick={() => getContent('userAuthentication')}>User Authentication</h2>
+                <h2 onClick={() => getContent('secureTransfers')}>Secure Transfers</h2>
                 <h2>Contact Us</h2>
             </div>
             

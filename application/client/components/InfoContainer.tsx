@@ -1,24 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import css from '../css/info.module.scss';
 
-export default function InfoContainer(lemma) {
+export default function InfoContainer({ lemma }) { // Desestructuración de props
 
-    function renderContent() {
-        if (lemma === 'transaction') {
-            return (
-                <p>
-                    Design with a user-centric approach to problem solving
-                </p>
-            )
-        }
+  const [currentLemma, setCurrentLemma] = useState('');
 
-    }
-
-    return (
-        <div className={css.main}>
-
-            We believe in a user-centric approach for problem solving. ❤️
-            <p>Designed utilizing user-frist approach</p>
-        </div>
-    )
+  return (
+    <div className={css.main}>
+      {lemma && 
+        <div>
+          {lemma} We believe in a user-centric approach for problem solving. ❤️
+          <p>Designed utilizing user-first approach</p>
+        </div>}
+    </div>
+  );
 }
