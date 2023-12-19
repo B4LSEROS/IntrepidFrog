@@ -21,6 +21,16 @@
     font-width: 90;
 }
 
+@keyframes RenderIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+
 
 
 

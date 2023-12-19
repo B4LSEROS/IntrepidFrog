@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
 import Head from "next/head";
 import Banner from "../components/Banner";
-import logo from '../public/logo-black.jpg';
+import logo from '../public/logo-white.jpg';
 import css from '../css/main.module.css';
 import Section2 from '../components/Section2';
 
 export default function Main () {
 
-    const [content, setContent] = useState<string>('');
+    const [content, setContent] = useState<string>('login');
+    const [isExit, setIsExit] = useState<boolean>(false);
 
     function getOption (text: string) {
         setContent(text);
+    }
+
+    function handleExit () {
+        setIsExit(!isExit);
     }
 
     return (
