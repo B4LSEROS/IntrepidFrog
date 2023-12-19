@@ -10,13 +10,13 @@ export default function Banner ({getContent}) {
     
     return (
         <section className={css.main}>
-            <Image alt='IntrepidFrog Logo'src={intrepidFrogLogo} className={css.intrepidFrogLogo}></Image>
+            <Image alt='IntrepidFrog Logo'src={intrepidFrogLogo} className={css.intrepidFrogLogo} onClick={() => getContent('title')}></Image>
 
             <div className={css.phrase}>
                 <h2 onClick={() => getContent('transactionHistory')}>Transaction History</h2>
                 <h2 onClick={() => getContent('userAuthentication')}>User Authentication</h2>
                 <h2 onClick={() => getContent('secureTransfers')}>Secure Transfers</h2>
-                <h2>Contact Us</h2>
+                <h2 onClick={() => getContent('contactUs')}>Contact Us</h2>
             </div>
             
         </section>
