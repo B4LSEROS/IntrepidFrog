@@ -1,3 +1,21 @@
+@media screen and (min-width: 768px) {
+    .main {
+        font-size: 6dvh;
+    }
+
+    .phrase {
+        font-size: 3dvh;
+    }
+
+}
+
+@media screen and (min-width: 200px) {
+    .main {
+        font-size: 3dvh;
+    }
+
+}
+
 @keyframes FadeIn {
     from {
         opacity: 0;

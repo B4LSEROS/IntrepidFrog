@@ -5,7 +5,6 @@ import { infoData } from "../utils/infoDataContainers";
 import info_style from "../css/info.module.scss";
 
 export default function InfoContainer({ lemma, handleExit }) {
-
   const info = infoData;
 
   const infoArray = Object.values(info);
@@ -19,7 +18,7 @@ export default function InfoContainer({ lemma, handleExit }) {
             alt="Close window"
             src={closeLogo}
             className={info_style.logo}
-            onClick={handleExit}
+            onClick={() => handleExit("login")}
           ></Image>
 
           <h1>{data.title}</h1>

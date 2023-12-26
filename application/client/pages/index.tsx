@@ -28,7 +28,7 @@ export default function Main () {
             </Head>
 
             <Banner getContent={getOption}/>
-            <Section2 content={content} logoSRC={logo}/>
+            <Section2 content={content} logoSRC={logo} returnScreen={getOption}/>
         </div>
     )
 }

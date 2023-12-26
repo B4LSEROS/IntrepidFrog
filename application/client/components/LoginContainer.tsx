@@ -13,12 +13,13 @@ export default function LoginContainer({ logo }) {
         <h1 className={login.title}>Login</h1>
       </header>
 
-      <form>
+      <form className = {login["form-container"]}>
         <div className={login["input-container"]}>
           <input type="text" name="username" placeholder="Username" required />
         </div>
 
         <div className={login["input-container"]}>
+
           <input
             type="password"
             name="password"
@@ -27,9 +28,7 @@ export default function LoginContainer({ logo }) {
           />
           <span className={login["form-icon"]}></span>
         </div>
-
-        <button type="submit">Submit</button>
-
+        <button type="submit" className={login["submit-button"]}>Submit</button>
         <button type="button">Create an Account</button>
       </form>
     </div>
