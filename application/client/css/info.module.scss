@@ -65,8 +65,6 @@
 
     font-family: 'MonaSans-Regular';
 
-
-
     height: 100%;
     
 }
@@ -80,10 +78,14 @@
     animation: Logo 2s ease-in-out forwards;
 }
 
+.lists {
+    list-style: none;
+    margin-bottom: 15px;
+}
 
 .lists:nth-child(odd) {
     font-family: 'MonaSans-Light';
-    animation: Bottom-to-Top 1.5s linear forwards;
+    animation: Bottom-to-Top 2s linear forwards;
 }
 
 .lists:nth-child(even) {

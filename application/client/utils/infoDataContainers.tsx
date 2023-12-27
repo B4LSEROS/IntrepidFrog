@@ -20,11 +20,13 @@ const infoData = {
   contactUs: {
     id: "contactUs",
     title: "About Us",
+    github: "https://github.com/B4LSEROS/IntrepidFrog",
     items: [
-      "Dedicated to providing secure and reliable financial services since 2005",
+      "Dedicated to providing secure and reliable financial services",
       "Committed to customer satisfaction and financial innovation",
       "Our team consists of experienced professionals in finance and technology",
     ],
+    
   },
   userAuthentication: {
     id: "userAuthentication",

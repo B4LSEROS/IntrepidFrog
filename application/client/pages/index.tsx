@@ -8,14 +8,9 @@ import Section2 from '../components/Section2';
 export default function Main () {
 
     const [content, setContent] = useState<string>('login');
-    const [isExit, setIsExit] = useState<boolean>(false);
 
     function getOption (text: string) {
         setContent(text);
-    }
-
-    function handleExit () {
-        setIsExit(!isExit);
     }
 
     return (
