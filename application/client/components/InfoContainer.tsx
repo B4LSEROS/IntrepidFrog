@@ -32,7 +32,7 @@ export default function InfoContainer({ lemma, handleExit }) {
               </li>
             ))}
           </ol>
-          {data.github && (
+          {/*{data.github && (
             <>
             <a href={data.github}>
               <Image alt="GitHub Icon" src={gitHubIcon}></Image>
@@ -41,7 +41,7 @@ export default function InfoContainer({ lemma, handleExit }) {
               <Image alt="Mail Icon" src={mailIcon}></Image>
             </a>
             </>
-          )}
+          )}*/}
         </div>
       ));
   }

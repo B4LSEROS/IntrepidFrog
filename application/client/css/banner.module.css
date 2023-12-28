@@ -48,7 +48,7 @@
 
 
     box-sizing: border-box;
-    font-family: 'MonaSans-Light';
+    font-family: 'MonaSans-ExtraLight';
 }
 .phrase > h2:nth-child(odd) {
     text-align: right;

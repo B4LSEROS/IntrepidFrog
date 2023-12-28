@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import login from "../css/login.module.scss";
+import { FaLock, FaUserAlt } from "react-icons/fa";
+import { get } from "http";
 
 export default function LoginContainer({ logo }) {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [focus, setFocus] = useState<string>("");
 
   function handleSubmit(event): void {
     event.preventDefault();
@@ -12,7 +15,7 @@ export default function LoginContainer({ logo }) {
     if (username.length <= 3) {
       alert("username is too short.");
     } else {
-    alert(username);
+      alert(username);
     }
   }
 
@@ -20,9 +23,23 @@ export default function LoginContainer({ logo }) {
     const MIN_USERNAME_SIZE = 4;
     const MIN_PASSWORD_SIZE = 8;
 
-    return(
-      username.length <= MIN_USERNAME_SIZE || password.length < MIN_PASSWORD_SIZE
-    )
+    return (
+      username.length <= MIN_USERNAME_SIZE ||
+      password.length < MIN_PASSWORD_SIZE
+    );
+  }
+
+  function handleFocus(text: string): void {
+    setFocus(text);
+  }
+
+  function getModifier(text: string): string {
+    const modifier = {
+      focus: login["form-focus"],
+      blur: login["form-blur"],
+    };
+
+    return focus === text ? modifier.focus : modifier.blur;
   }
 
   return (
@@ -32,34 +49,48 @@ export default function LoginContainer({ logo }) {
         <h1 className={login.title}>Login</h1>
       </header>
 
-      <form onSubmit={handleSubmit} className = {login["form-container"]}>
-
+      <form
+        action="POST"
+        onSubmit={handleSubmit}
+        className={login["form-container"]}
+      >
         <div className={login["input-container"]}>
-          <input 
-            type="text" 
-            name="username" 
-            placeholder="Username" 
+        <span className={`${login["logo-login"]} ${getModifier("password")}`}>
+            <FaUserAlt />
+          </span>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
             onChange={(event): void => setUsername(event.target.value)}
-            required 
+            onFocus={() => handleFocus(username)}
+            onBlur={() => handleFocus("")}
+            required
           />
+
         </div>
 
         <div className={login["input-container"]}>
-
+          <span className={`${login["logo-login"]} ${getModifier("password")}`}>
+              <FaLock />
+          </span>
           <input
             type="password"
             name="password"
             placeholder="Password"
             onChange={(event): void => setPassword(event.target.value)}
+            onFocus={() => handleFocus(username)}
+            onBlur={() => handleFocus("")}
             required
           />
-          <span className={login["form-icon"]}></span>
+
         </div>
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           disabled={handleDisabled()}
-          className={login["submit-button"]}>
-            Submit
+          className={login["submit-button"]}
+        >
+          Submit
         </button>
         <button type="button">Create an Account</button>
       </form>
