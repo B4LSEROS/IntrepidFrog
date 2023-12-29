@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import Image from "next/image";
 import login from "../css/login.module.scss";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import { get } from "http";
+import API_SERVICE from "../services/service";
 
 export default function LoginContainer({ logo }) {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [focus, setFocus] = useState<string>("");
 
-  function handleSubmit(event): void {
+  async function handleSubmit (event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const response = await API_SERVICE.post.login(username, password);
+    const data = await response.json();
 
     if (username.length <= 3) {
       alert("username is too short.");
