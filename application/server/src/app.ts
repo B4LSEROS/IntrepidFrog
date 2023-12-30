@@ -1,6 +1,6 @@
 import express from 'express';
-import swaggerUI from 'swagger-ui-express';
-import swaggerSettingsBr from './swagger-br.json';
+//import swaggerUI from 'swagger-ui-express';
+//import swaggerSettingsBr from './swagger-br.json';
 import errorMiddleware from './utilities/middleware/errorMiddleware';
 
 class App {
@@ -28,7 +28,7 @@ class App {
     this.app.use(express.json());
     this.app.use(accessControl);
 
-    this.app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSettingsBr));
+//    this.app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSettingsBr));
 
 
     this.app.use(errorMiddleware);

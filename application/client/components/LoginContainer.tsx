@@ -9,18 +9,17 @@ import unlockIcon from "../public/lock-unlocked.svg";
 import userIcon from "../public/user-icon.svg";
 
 export default function LoginContainer({ logo }) {
-
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [focus, setFocus] = useState<string>("");
   const [isPassword, setIsPassword] = useState({
     display: false,
-    text: "password"
+    text: "password",
   });
 
   const router = useRouter();
 
-  async function handleSubmit (event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const response = await API_SERVICE.post.login(username, password);
@@ -51,19 +50,22 @@ export default function LoginContainer({ logo }) {
   }
 
   function showPassword() {
-    setIsPassword(isPassword => (
-      {
-        ...isPassword,
-        display: !isPassword.display,
-        text: isPassword.display ? "password" : "text"
-      }
-    ));
+    setIsPassword((isPassword) => ({
+      ...isPassword,
+      display: !isPassword.display,
+      text: isPassword.display ? "password" : "text",
+    }));
   }
 
   return (
     <div className={login.main}>
       <header className={login.logoContainer}>
-        <Image className={login.logo} alt="IntrepidFrog Logo" src={logo} onClick={() => router.push('/Menu')}/>
+        <Image
+          className={login.logo}
+          alt="IntrepidFrog Logo"
+          src={logo}
+          onClick={() => router.push("/Menu")}
+        />
         <h1 className={login.title}>Login</h1>
       </header>
 
@@ -73,7 +75,7 @@ export default function LoginContainer({ logo }) {
         className={login["form-container"]}
       >
         <div className={login["input-container"]}>
-        <span className={`${login["logo-login"]} ${getModifier("password")}`}>
+          <span className={`${login["logo-login"]} ${getModifier("password")}`}>
             <Image alt="Lock Icon" src={userIcon}></Image>
           </span>
           <input
@@ -86,12 +88,23 @@ export default function LoginContainer({ logo }) {
             onBlur={() => handleFocus("")}
             required
           />
-
         </div>
 
         <div className={login["input-container"]}>
           <span className={`${login["logo-login"]} ${getModifier("password")}`}>
-              {isPassword.display ? <Image onClick={showPassword}alt="Lock Icon" src={lockIcon}></Image> : <Image alt="Lock Icon"  onClick={() => showPassword()} src={unlockIcon}></Image>}
+            {isPassword.display ? (
+              <Image
+                onClick={showPassword}
+                alt="Lock Icon"
+                src={lockIcon}
+              ></Image>
+            ) : (
+              <Image
+                alt="Lock Icon"
+                onClick={() => showPassword()}
+                src={unlockIcon}
+              ></Image>
+            )}
           </span>
           <input
             type={isPassword.text}
@@ -102,7 +115,6 @@ export default function LoginContainer({ logo }) {
             onBlur={() => handleFocus("")}
             required
           />
-
         </div>
         <button
           type="submit"
@@ -111,7 +123,9 @@ export default function LoginContainer({ logo }) {
         >
           Submit
         </button>
-          <button type="button" onClick={() => router.push("/RegisterContainer")}>Create an Account</button>
+        <button type="button" onClick={() => router.push("/RegisterContainer")}>
+          Create an Account
+        </button>
       </form>
     </div>
   );
