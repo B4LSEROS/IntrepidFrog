@@ -4,12 +4,19 @@ import login from "../css/login.module.scss";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import API_SERVICE from "../services/service";
 import { useRouter } from "next/router";
+import lockIcon from "../public/lock.svg";
+import unlockIcon from "../public/lock-unlocked.svg";
+import userIcon from "../public/user-icon.svg";
 
 export default function LoginContainer({ logo }) {
 
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [focus, setFocus] = useState<string>("");
+  const [isPassword, setIsPassword] = useState({
+    display: false,
+    text: "password"
+  });
 
   const router = useRouter();
 
@@ -43,6 +50,16 @@ export default function LoginContainer({ logo }) {
     return focus === text ? modifier.focus : modifier.blur;
   }
 
+  function showPassword() {
+    setIsPassword(isPassword => (
+      {
+        ...isPassword,
+        display: !isPassword.display,
+        text: isPassword.display ? "password" : "text"
+      }
+    ));
+  }
+
   return (
     <div className={login.main}>
       <header className={login.logoContainer}>
@@ -57,11 +74,12 @@ export default function LoginContainer({ logo }) {
       >
         <div className={login["input-container"]}>
         <span className={`${login["logo-login"]} ${getModifier("password")}`}>
-            <FaUserAlt />
+            <Image alt="Lock Icon" src={userIcon}></Image>
           </span>
           <input
             type="text"
             name="username"
+            className={login["textareas"]}
             placeholder="Username"
             onChange={(event): void => setUsername(event.target.value)}
             onFocus={() => handleFocus(username)}
@@ -73,10 +91,10 @@ export default function LoginContainer({ logo }) {
 
         <div className={login["input-container"]}>
           <span className={`${login["logo-login"]} ${getModifier("password")}`}>
-              <FaLock />
+              {isPassword.display ? <Image onClick={showPassword}alt="Lock Icon" src={lockIcon}></Image> : <Image alt="Lock Icon"  onClick={() => showPassword()} src={unlockIcon}></Image>}
           </span>
           <input
-            type="password"
+            type={isPassword.text}
             name="password"
             placeholder="Password"
             onChange={(event): void => setPassword(event.target.value)}
