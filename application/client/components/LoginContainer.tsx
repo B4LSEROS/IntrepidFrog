@@ -5,6 +5,7 @@ import { FaLock, FaUserAlt } from "react-icons/fa";
 import { get } from "http";
 import API_SERVICE from "../services/service";
 import { useRouter } from "next/router";
+import { Router } from "express";
 
 export default function LoginContainer({ logo }) {
 
@@ -47,7 +48,7 @@ export default function LoginContainer({ logo }) {
   return (
     <div className={login.main}>
       <header className={login.logoContainer}>
-        <Image className={login.logo} alt="IntrepidFrog Logo" src={logo} />
+        <Image className={login.logo} alt="IntrepidFrog Logo" src={logo} onClick={() => router.push('/Menu')}/>
         <h1 className={login.title}>Login</h1>
       </header>
 
