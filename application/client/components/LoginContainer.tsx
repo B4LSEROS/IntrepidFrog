@@ -2,10 +2,8 @@ import React, { FormEvent, useState } from "react";
 import Image from "next/image";
 import login from "../css/login.module.scss";
 import { FaLock, FaUserAlt } from "react-icons/fa";
-import { get } from "http";
 import API_SERVICE from "../services/service";
 import { useRouter } from "next/router";
-import { Router } from "express";
 
 export default function LoginContainer({ logo }) {
 
