@@ -32,6 +32,7 @@ const OPTIONS = {
 
 
 class TransactionResource {
+  
     private repository = Transfer;
     private repositoryUser = User;
     private repositoryAccount = Account;
