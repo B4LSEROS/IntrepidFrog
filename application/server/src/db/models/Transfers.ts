@@ -1,6 +1,6 @@
-import * as Sequelize from 'sequelize';
-import database from './Index';
-import Users from './Users';
+import * as Sequelize from "sequelize";
+import database from "./Index";
+import Users from "./Users";
 
 interface ITransfer {
   id: number;
@@ -10,7 +10,7 @@ interface ITransfer {
   createdAt: Date;
 }
 
-type ITransferCreation = Omit<ITransfer, 'id' | 'createdAt'>;
+type ITransferCreation = Omit<ITransfer, "id" | "createdAt">;
 
 interface ITransferRegister {
   username: string;
@@ -42,7 +42,7 @@ Transfer.init(
   },
   {
     sequelize: database,
-    tableName: 'Transfers',
+    tableName: "Transfers",
     timestamps: true,
     updatedAt: false,
     underscored: false,
@@ -50,29 +50,24 @@ Transfer.init(
 );
 
 Transfer.belongsTo(Users, {
-  foreignKey: 'debitedAccountId',
-  as: 'debitedAccount',
+  foreignKey: "debitedAccountId",
+  as: "debitedAccount",
 });
 
 Transfer.belongsTo(Users, {
-  foreignKey: 'creditedAccountId',
-  as: 'creditedAccount',
+  foreignKey: "creditedAccountId",
+  as: "creditedAccount",
 });
 
 Users.hasMany(Transfer, {
-  sourceKey: 'id',
-  foreignKey: 'debitedAccountId',
+  sourceKey: "id",
+  foreignKey: "debitedAccountId",
 });
 
 Users.hasMany(Transfer, {
-  sourceKey: 'id',
-  foreignKey: 'creditedAccountId',
+  sourceKey: "id",
+  foreignKey: "creditedAccountId",
 });
 
 export default Transfer;
-export {
-  ITransfer,
-  ITransferCreation,
-  ITransferRegister,
-  ITransferReturned,
-};
+export { ITransfer, ITransferCreation, ITransferRegister, ITransferReturned };
