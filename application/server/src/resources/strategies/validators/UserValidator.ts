@@ -10,6 +10,7 @@ const PASSWORD_MSG =
   "Password needs to contain a number, capital letter and be greater than 6 characters in length";
 
 class UserValidator {
+  
   static login = generateValidator(
     JOI.object({
       username: JOI.string().required().messages({
@@ -25,7 +26,7 @@ class UserValidator {
     }).messages({
       "object.unknown": "The body of the request contains unauthorized fields.",
     })
-  ) as Validator<Body>;
+  ) as Validator<IUserLogin>;
 
   static register = generateValidator(
     JOI.object({
