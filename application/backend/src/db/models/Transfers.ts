@@ -1,6 +1,6 @@
 import * as Sequelize from "sequelize";
 import database from "./Index";
-import Users from "./Users";
+import Account from "./Account";
 
 interface ITransfer {
   id: number;
@@ -49,22 +49,22 @@ Transfer.init(
   }
 );
 
-Transfer.belongsTo(Users, {
+Transfer.belongsTo(Account, {
   foreignKey: "debitedAccountId",
   as: "debitedAccount",
 });
 
-Transfer.belongsTo(Users, {
+Transfer.belongsTo(Account, {
   foreignKey: "creditedAccountId",
   as: "creditedAccount",
 });
 
-Users.hasMany(Transfer, {
+Account.hasMany(Transfer, {
   sourceKey: "id",
   foreignKey: "debitedAccountId",
 });
 
-Users.hasMany(Transfer, {
+Account.hasMany(Transfer, {
   sourceKey: "id",
   foreignKey: "creditedAccountId",
 });

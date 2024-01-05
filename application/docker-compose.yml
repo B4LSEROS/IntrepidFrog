@@ -1,14 +1,14 @@
 version: '3.9'
 
 services:
-  front-end:
+  frontend:
     container_name: ng_frontend
     build: ./client
     ports:
       - 3000:3000
     platform: linux/x86_64
     working_dir: /application-client
-    depends_on:
+    depends_on:   
       backend:
         condition: service_healthy
     environment:
@@ -18,7 +18,7 @@ services:
       timeout: 10s
       retries: 5
 
-  back-end:
+  backend:
     container_name: ng_backend
     build: ./server
     ports:

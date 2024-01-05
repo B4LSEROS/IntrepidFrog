@@ -1,7 +1,9 @@
+import register from "../css/pages/register.module.scss";
+
 export default function Menu() {
     return (
-        <div>
-            Aquí va el frontend del menú.
-        </div>
+        <main>
+            <h1>Menu</h1>
+        </main>
     )
 }
