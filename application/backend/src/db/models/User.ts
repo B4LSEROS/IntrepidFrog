@@ -1,6 +1,6 @@
 import * as Sequelize from 'sequelize';
 import database from './Index';
-import Users from './Users';
+import Account from './Account';
 
 interface IUser {
   id: number;
@@ -43,12 +43,12 @@ User.init(
   }
 );
 
-User.belongsTo(Users, {
+User.belongsTo(Account, {
   foreignKey: 'accountId',
   as: 'account'
 });
 
-Users.hasOne(User, {
+Account.hasOne(User, {
   sourceKey: 'id',
   foreignKey: 'accountId',
   as: 'user',
